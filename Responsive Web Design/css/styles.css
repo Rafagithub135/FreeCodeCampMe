@@ -1,5 +1,7 @@
-h1, h2 {
-    text-align: center;
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif;
+    padding: 20px;
 }
 
 h1 {
@@ -23,8 +25,8 @@ h1, h2, p {
 .menu {
     width: 80%;
     background-color: burlywood;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     padding: 20px;
     max-width: 500px;
 }
@@ -33,6 +35,7 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: -25px;
 }
 
 hr {
@@ -66,7 +69,7 @@ h1, h2 {
     width: 25%;
 }
 
-/* FOOTER */
+/*FOOTER*/
 
 footer {
     font-size: 14px;
