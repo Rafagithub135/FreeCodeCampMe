@@ -20,7 +20,7 @@
     </nav>
 </header>
 <main>
-    <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post" >
+    <form action="https://freecodecamp.org/practice-project/accessibility-quiz" method="post">
         <section role="region" aria-labelledby="student-info">
             <h2 id="student-info">Student Info</h2>
             <div class="info">
@@ -43,8 +43,16 @@
                 <fieldset class="question" name="q1">
                     <legend>Each HTML page begins with DOCTYPE.</legend>
                     <ul class="answers-list">
-                        <li></li>
-                        <li></li>
+                        <li>
+                            <label for="q1-a1">
+                                <input type="radio" id="q1-a1" name="ans1" value="true"> True
+                            </label>
+                        </li>
+                        <li>
+                            <label for="q1-a2">
+                                <input type="radio" id="q1-a2" name="ans1" value="false"> False
+                            </label>
+                        </li>
                     </ul>
                 </fieldset>
             </div>
@@ -53,15 +61,42 @@
                 <fieldset class="question" name="q2">
                     <legend>Meta data is contained inside the html element.</legend>
                     <ul class="answers-list">
-                        <li></li>
-                        <li></li>
+                        <li>
+                            <label for="q2-a1">
+                                <input type="radio" id="q2-a1" name="ans2" value="true"> True
+                            </label>
+                        </li>
+                        <li>
+                            <label for="q2-a2">
+                                <input type="radio" id="q2-a2" name="ans2" value="false"> False
+                            </label>
+                        </li>
                     </ul>
                 </fieldset>
             </div>
         </section>
         <section role="region" aria-labelledby="css-questions">
             <h2 id="css-questions">CSS</h2>
+            <div class="formrow">
+                <div class="question-block">
+                    <label for="q3">Are you a frontend developer?</label>
+                </div>
+                <div class="answer">
+                    <select name="q3" id="q3" required>
+                        <option value="">Select an option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="question-block">
+                    <label for="q4">Do you have any questions?</label>
+                </div>
+                <div class="answer">
+                    <textarea name="q4" id="q4" cols="30" rows="10" placeholder="Who is flexbox?"></textarea>
+                </div>
+            </div>
         </section>
+        <input type="submit" value="Send">
     </form>
 </main>
 </body>
