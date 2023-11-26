@@ -28,6 +28,10 @@ nav>ul {
     justify-content: space-evenly;
 }
 
+p::before {
+    content: "Question #";
+}
+
 #logo {
     width: max(100px, 18vw);
     background-color: #0a0a23;
