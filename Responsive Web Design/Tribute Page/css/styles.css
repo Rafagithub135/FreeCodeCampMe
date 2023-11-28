@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+p {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+img {
+    display: block;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+#img-div {
+    margin: auto;
+}
+
+#img-caption {
+    text-align: center;
+    font-size: small;
+    padding-bottom: 25px;
+}
