@@ -7,7 +7,7 @@ const magic = () => new Date();
 
 const myConcat = (arr1, arr2) => arr1.concat(arr2);
 
-var myConcat = function(arr1, arr2) {
+var myConcats = function(arr1, arr2) {
     "use strict";
     return arr1.concat(arr2);
 }
