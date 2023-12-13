@@ -48,3 +48,82 @@ let arr2;
     }
 })();
 
+// Destructuring Assignment to Assign Variables from Objects
+
+const HIGH_TEMPERATURES = {
+    yesterday: 75,
+    today: 77,
+    tomorrow: 80
+};
+
+const { today, tomorrow } = HIGH_TEMPERATURES;
+
+const { today: today_high, tomorrow: tomorrow_high } = HIGH_TEMPERATURES;
+
+// Destructuring Assignment to Assign Variables from Nested Objects
+
+const LOCAL_FORECAST = {
+    yesterday: { low: 61, high: 75 },
+    today: { low: 64, high: 77 },
+    tomorrow: { low: 68, high: 80 }
+};
+
+const { today: { low: lowToday, high: highToday } } = LOCAL_FORECAST;
+
+// Destructuring Assignment to Assign Variables from Arrays
+
+let a = 8, b = 6;
+(() => {
+    "use strict";
+    [a, b] = [b, a];
+})();
+
+// Destructuring Assignment with the Rest Parameter to Reassign Array Elements
+
+function removeFirstTwo(list) {
+    const [a, b, ...shorterList] = list;
+    return shorterList;
+}
+
+const source = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sourceWithoutFirstTwo = removeFirstTwo(source);
+
+// Destructuring Assignment to Pass an Object as a Function's Parameters
+
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -0.75,
+    average: 35.85
+};
+
+const half = (function() {
+    return function half({ max, min }) {
+        return (max + min) / 2.0;
+    };
+})();
+
+// Solution using ternary operator:
+
+const half1 = ({ max, min }) => (max + min) / 2.0;
+
+// Create Strings using Template Literals
+
+const result = {
+    success: ["max-length", "no-amd", "prefer-arrow-functions"],
+    failure: ["no-var", "var-on-top", "linebreak"],
+    skipped: ["id-blacklist", "no-dup-keys"]
+};
+
+function makeList(arr) {
+    const failureItems = [];
+    for (let i = 0; i < arr.length; i++) {
+        failureItems.push(`<li class="text-warning">${arr[i]}</li>`);
+    }
+    return failureItems;
+}
+
+const failuresList = makeList(result.failure);
+
