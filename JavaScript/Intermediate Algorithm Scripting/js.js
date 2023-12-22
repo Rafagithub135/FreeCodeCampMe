@@ -222,8 +222,99 @@ smallestCommons([1, 5]);
 // Drop it
 
 function dropElements(arr, func) {
-    let result = arr.filter(item => func(item));
+    while (arr.length > 0 && !func(arr[0])) {
+        arr.shift();
+    }
+    return arr;
+}
+
+// test here
+dropElements([1, 2, 3, 4], function(n) {
+    return n >= 3;
+});
+
+// Steamroller
+
+function steamrollArray(arr) {
+    let result = [];
+    let flatten = function(arg) {
+        if (!Array.isArray(arg)) {
+            result.push(arg);
+        } else {
+            for (let i in arg) {
+                flatten(arg[i]);
+            }
+        }
+    };
+    arr.forEach(flatten);
     return result;
 }
 
-dropElements([1, 2, 3], function (n) { return n < 3; });
+steamrollArray([1, [2], [3, [[4]]]]);
+
+// Binary Agents
+
+function binaryAgent(str) {
+    let result = str.split(" ").map(item => String.fromCharCode(parseInt(item, 2))).join("");
+    return result;
+}
+
+binaryAgent(
+    "01000001 01110010 01100101 01101110 00100111 " +
+    "01110100 00100000 01100010 01101111 01101110 " +
+    "01100110 01101001 01110010 01100101 01110011 " +
+    "00100000 01100110 01110101 01101110 00100001 " +
+    "00111111"
+);
+
+// Everything Be True
+
+function truthCheck(collection, pre) {
+    let result = collection.every(item => item[pre]);
+    return result;
+}
+
+truthCheck([{name: "Quincy", role: "Founder", isBot: false}, {name: "Naomi", role:" ", isBot: false}, {name: "Camperbot", role: "Bot", isBot: true}], "isBot");
+
+// Arguments Optional
+
+function addTogether() {
+    const [first, second] = arguments;
+    if (typeof first === "number") {
+        if (typeof second === "number") return first + second;
+        if (arguments.length === 1) return (second) => addTogether(first, second);
+    }
+}
+
+addTogether(2, 3);
+
+// Make a Person
+
+const Person = function(first, last) {
+    let firstName = first;
+    let lastName = last;
+
+    this.getFirstName = function() {
+        return firstName;
+    };
+    this.getLastName = function() {
+        return lastName;
+    };
+    this.getFullName = function() {
+        return this.getFirstName() + " " + this.getLastName();
+    };
+    this.setFirstName = function(name) {
+        return firstName = first;
+    };
+    this.setLastName = function(name) {
+        return lastName = last;
+    };
+    this.setFullName = function(name) {
+        this.setFirstName(first);
+        this.setLastName(last);
+        return this.getFullName();
+    };
+};
+
+const bob = new Person("Bob", "Ross");
+console.log(bob.getFullName());
