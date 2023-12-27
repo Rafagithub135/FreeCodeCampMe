@@ -292,24 +292,29 @@ addTogether(2, 3);
 
 const Person = function(first, last) {
     let firstName = first;
-    let lastName = last;
+    let lastName  = last;
 
     this.getFirstName = function() {
         return firstName;
     };
+
     this.getLastName = function() {
         return lastName;
     };
+
     this.getFullName = function() {
         return this.getFirstName() + " " + this.getLastName();
     };
-    this.setFirstName = function(name) {
+
+    this.setFirstName = function(first) {
         return firstName = first;
     };
-    this.setLastName = function(name) {
+
+    this.setLastName = function(last) {
         return lastName = last;
     };
-    this.setFullName = function(name) {
+
+    this.setFullName = function(first, last) {
         this.setFirstName(first);
         this.setLastName(last);
         return this.getFullName();
@@ -318,3 +323,17 @@ const Person = function(first, last) {
 
 const bob = new Person("Bob", "Ross");
 console.log(bob.getFullName());
+
+// Map the Debris
+
+function orbitalPeriod(arr) {
+    const GM = 398600.4418;
+    const earthRadius = 6367.4447;
+    const result = arr.map(item => {
+        const orbitalPeriod = Math.round(2 * Math.PI * Math.sqrt(Math.pow(earthRadius + item.avgAlt, 3) / GM));
+        return {name: item.name, orbitalPeriod};
+    });
+    return result;
+}
+
+orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
