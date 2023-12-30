@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Lessons</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+          integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+    <style>
+        h2 {
+            font-family: Lobster, Monospace;
+        }
+
+        .thick-green-border {
+            border-color: green;
+            border-width: 10px;
+            border-style: solid;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<!-- Going back to HTML5 and CSS Lessons but now adding Bootstrap -->
+<!-- Step one is to add the "script" and "link" tags to the top and bottom of the page -->
+<!-- Step two, put all of the HTML in a "div" element with the class container-fluid -->
+<div class="container-fluid">
+    <!--    To center the heading, add the class "text-center" to the h2-->
+    <!--    Nest the h2 element and the first cat image in a div with the class "row".  This will put them both on the same line.-->
+    <div class="row">
+        <div class="col-xs-8">
+            <h2 class="text-primary text-center">CatPhotoApp</h2>
+        </div>
+        <div class="col-xs-4">
+            <a href="#"><img class="img-responsive thick-green-border"
+                             src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg"
+                             alt="A cute orange cat lying on its back."></a>
+        </div>
+    </div>
+    <!--    Add an image with the src below and add the class "img-responsive" to make the image resize automatically-->
+    <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/running-cats.jpg" alt="Running cats"
+         class="img-responsive">
+    <!--    Create a button with Bootstrap styling using the classes "btn btn-default" and the text Like.  The class "btn-block" will make the button a block element so everything after will flow below the block. The class btn-primary gives the button the blue (or primary) color-->
+    <!--    Create a div to contain all three buttons on the same line with a column width of 4 using "col-xs-4".  Each button needs its own div with the col-xs-4 class.-->
+    <!--    Add a thumbs up icon to the like button using Font Awesome-->
+    <div class="row">
+        <div class="col-xs-4">
+            <button class="btn btn-primary btn-block"><i class="fas fa-thumbs-up"></i> Like</button>
+        </div>
+        <!--    Add a block-level button below the like button with the text "Info" and add the class of "btn-info" to it along with the "btn btn-block" classes-->
+        <div class="col-xs-4">
+            <!--            Add a class of "info-circle" to the info button-->
+            <button class="btn btn-block btn-info"><i class="fas fa-info-circle"></i> Info</button>
+        </div>
+        <!--    Add a block-level button below the info button with the text "Delete" and give it the class of "btn-danger btn btn-block"-->
+        <div class="col-xs-4">
+            <!--            Add a class of "trash" to the delete button.-->
+            <button class="btn btn-danger btn-block"><i class="fas fa-trash"></i> Delete</button>
+        </div>
+    </div>
+    <!--    Add a span with the class "text-danger" to the p to make the word love have a red color.-->
+    <p>Things cats <span class="text-danger">love</span>:</p>
+    <ul>
+        <li>cat nip</li>
+        <li>laser pointers</li>
+        <li>lasagna</li>
+    </ul>
+    <p>Top 3 things cats hate:</p>
+    <ol>
+        <li>flea treatment</li>
+        <li>thunder</li>
+        <li>other cats</li>
+    </ol>
+    <form action="https://freecatphotoapp.com/submit-cat-photo">
+        <!--        Make the radio buttons on the same row and responsive to the page size using the "row" and "col-xs-6" classes.-->
+        <div class="row">
+            <div class="col-xs-6">
+                <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+            </div>
+            <div class="col-xs-6">
+                <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+            </div>
+        </div>
+        <!--        Make the checkboxes spread out evenly across the page as the radio buttons above except using "col-xs-4".-->
+        <div class="row">
+            <div class="col-xs-4">
+                <label><input type="checkbox" name="personality"> Loving</label>
+            </div>
+            <div class="col-xs-4">
+                <label><input type="checkbox" name="personality"> Lazy</label>
+            </div>
+            <div class="col-xs-4">
+                <label><input type="checkbox" name="personality"> Crazy</label>
+            </div>
+        </div>
+        <input type="text" placeholder="cat photo URL" required>
+        <button type="submit">Submit</button>
+    </form>
+</div>
+<!--<script src="js/functions.js"></script>-->
+<script src="https://kit.fontawesome.com/68715d24c0.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous">
+</script>
+<script>document.getElementById("age").innerHTML = calculateAge(new Date())</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
