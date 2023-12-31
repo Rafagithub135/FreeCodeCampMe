@@ -8,6 +8,41 @@
     <!--  <link href="css/index.css" rel="stylesheet">-->
 </head>
 <body>
+<!--Using jQuery to bounce the buttons and shake the elements with the class of "well". Also, making the id of "target3" fade out.-->
+<script>$(document).ready(function() {
+    $("button").addClass("animated bounce");
+    $(".well").addClass("animated shake");
+    $("#target3").addClass("animated fadeOut");
+//     Adding the animated class to all elements with the type of "button", adding the shake class to all the buttons with a class of "btn", and adding the "btn-primary" class to the button with the id of "target1".
+    $("button").addClass("animated");
+    $(".btn").addClass("shake");
+    $("#target1").addClass("btn-primary");
+//     Removing the "btn-default" class from all buttons.
+    $("button").removeClass("btn-default");
+//     Changing the color of target1 to red.
+    $("#target1").css("color", "red");
+//     Disabling the target1 button.
+    $("#target1").prop("disabled", true);
+//     Emphasizing the text of the button "target4".
+    $("#target4").html("<em>#target4</em>");
+//     Removing the "#target4" element from the page using .remove().
+    $("#target4").remove();
+//     Moving "target2" element from the left-well to the right-well.
+    $("#target2").appendTo("#right-well");
+//     Cloning "target5" and appending it to the left-well.
+    $("#target5").clone().appendTo("#left-well");
+//     Giving the parent element of "#target1" element a background-color of red.
+    $("#target1").parent().css("background-color", "red");
+//     Giving all the children of the right-well element the color orange.
+    $("#right-well").children().css("color", "orange");
+//     Using the "target:nth-child(2)" selector to make the second child in each of the well elements to bounce.
+    $(".target:nth-child(2)").addClass("animated bounce");
+//     Selecting all the even "target" elements and making them shake.
+    $(".target:even").addClass("animated shake");
+//     Add the classes "animated" and "hinge" to the "body" element.  This makes the body swing from the top left corner and then drop off the page.
+    $("body").addClass("animated hinge");
+});
+</script>
 <!--Code below this line should not be changed-->
 <div class="container-fluid">
     <h3 class="text-primary text-center">jQuery Playground</h3>
