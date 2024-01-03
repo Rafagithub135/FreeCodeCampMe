@@ -52,10 +52,39 @@
         }
 
       //  Using @for as a for loop in css to create a grid
-        @for $i from 1 to 6 {
-          .col-#{$j} {
-            width: 100% / 6 * $i;
+        @for $j from 1 to 6 {
+          .text-#{$j} {
+            font-size: 15px * $j;
           }
+        }
+
+      //  Using @each to Map Over Items in a List
+        @each $color in blue, black, red {
+          .#{$color}-bg {
+            background-color: $color;
+          }
+        }
+
+      //  Apply a Style Until a Condition is Met with @while
+        $x: 1;
+        @while $x < 6 {
+          .text-#{$x} {
+            font-size: 15px * $x;
+          }
+          $x: $x + 1;
+        }
+
+      //  Split Your Styles into Smaller Chunks with Partials
+      //  After a partial is created, it will begin with an underscore and end with the extension .scss.  To import a partial use the following for _variables.scss:, _mixins.scss:, _extends.scss:, and _media-queries.scss:
+        @import 'variables';
+        @import 'mixins';
+        @import 'extends';
+        @import 'media-queries';
+
+      //  Extend One Set of CSS Styles to Another Element
+        .info-important {
+          @extend .info;
+          bacground-color: magenta;
         }
       }
     </style>
