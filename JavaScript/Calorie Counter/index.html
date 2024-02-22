@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calorie Counter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="css/index.css" rel="stylesheet">
+</head>
+<body>
+<form action="" id="calorie-counter">
+    <label for="budget">Budget</label>
+    <input type="number" min="0" id="budget" placeholder="Daily calorie budget" required>
+    <fieldset id="breakfast">
+        <legend>Breakfast</legend>
+        <div class="input-container"></div>
+    </fieldset>
+    <fieldset id="lunch">
+        <legend>Lunch</legend>
+        <div class="input-container"></div>
+    </fieldset>
+    <fieldset id="dinner">
+        <legend>Dinner</legend>
+        <div class="input-container"></div>
+    </fieldset>
+    <fieldset id="snacks">
+        <legend>Snacks</legend>
+        <div class="input-container"></div>
+    </fieldset>
+    <fieldset id="exercise">
+        <legend>Exercise</legend>
+        <div class="input-container"></div>
+    </fieldset>
+    <div class="controls"><span><label for="entry-dropdown">Add food or exercise:</label>
+    <select name="options" id="entry-dropdown">
+        <option value="breakfast" selected>Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="snacks">Snacks</option>
+        <option value="exercise">Exercise</option>
+    </select>
+    <button type="button" id="add-entry">Add Entry</button>
+    </span>
+    </div>
+    <div>
+        <button type="submit" id="submit">Calculate Remaining Calories</button>
+        <button type="button" id="clear">Clear</button>
+    </div>
+    <div id="output" class="output hide"></div>
+</form>
+<script src="js/js.js"></script>
+<script src="https://kit.fontawesome.com/68715d24c0.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+        crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+</html>
