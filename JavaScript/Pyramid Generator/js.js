@@ -33,3 +33,9 @@ for (const row of rows) {
     result = row + "\n" + result;
 }
 console.log(result);
+function padRow(row, count) {
+    return " ".repeat(count - row.length) + row;
+}
+padRow();
+let call;
+padRow(call);
