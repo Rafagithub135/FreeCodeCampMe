@@ -39,3 +39,10 @@ function padRow(rowNumber, rowCount) {
 padRow();
 const call = padRow();
 console.log(call);
+while (continueLoop) {
+    done++;
+    rows.push(padRow(done, counts));
+    if (done === 0) {
+        continueLoop = false;
+    }
+}
