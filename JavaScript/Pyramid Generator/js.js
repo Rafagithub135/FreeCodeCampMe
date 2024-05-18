@@ -23,7 +23,7 @@ console.log(pushed);
 const characters = "#";
 const counts = 8;
 rows = [];
-for (let i = 0; i < count; i++) {
+for (let i = 0; i < counts; i++) {
     rows.push(characters.repeat(i + 1));
 }
 let result = "";
@@ -37,6 +37,5 @@ function padRow(rowNumber, rowCount) {
     return " ".repeat(rowCount - rowNumber.length) + rowNumber;
 }
 padRow();
-let call;
 const call = padRow();
 console.log(call);
