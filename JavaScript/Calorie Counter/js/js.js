@@ -17,15 +17,38 @@ function isInvalidInput(str) {
 }
 
 function addEntry() {
-    const targetId = '#' + entryDropdown.value;
+    // const targetId = '#' + entryDropdown.value;
     // targetInputContainer = document.querySelector(targetId + ' .input-container');
-    // const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
-    const targetInputContainer = document.querySelector(`${targetId} .input-container`);
-    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length;
+    const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input-container`);
+    // const targetInputContainer = document.querySelector(`${targetId} .input-container`);
+    const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
     const HTMLString = `
-    <label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
-    <input type="text" id="${entryDropdown.value}-${entryNumber}-name" name="${entryDropdown.value}-${entryNumber}-name" placeholder="Name">
-`;
+<label for="${entryDropdown.value}-${entryNumber}-name">Entry ${entryNumber} Name</label>
+<input type="text" placeholder="Name" id="${entryDropdown.value}-${entryNumber}-name">
+<label for="${entryDropdown.value}-${entryNumber}-calories">Entry ${entryNumber} Calories</label>
+<input type="number" min="0" placeholder="Calories" id="${entryDropdown.value}-${entryNumber}-calories">`;
+    targetInputContainer.insertAdjacentHTML("beforeend", HTMLString);
 }
 
-// Step 42
+function calculateCalories(e) {
+    e.preventDefault();
+    isError = false;
+    const breakfastNumberInputs = document.querySelectorAll('#breakfast input[type="number"]');
+}
+
+function getCaloriesFromInputs(list) {
+    let calories = 0;
+    for (const item of list) {
+        const currVal = cleanInputString(item.value);
+        let invalidInputMatch = isInvalidInput(currVal);
+        if (invalidInputMatch) {
+            alert(`Invalid Input:  ${invalidInputMatch[0]}`);
+            isError = true;
+            return null;
+        }
+        calories += Number(currVal);
+    }
+    return calories;
+}
+
+addEntryButton.addEventListener('click', addEntry);
