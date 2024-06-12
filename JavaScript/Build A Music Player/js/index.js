@@ -84,7 +84,7 @@ let userData = {
     songCurrentTime: 0
 };
 
-const playSong = (${playlist-song.id}) => {};
+const playSong = (id) => {};
 
 // const printGreeting = () => {
 //     console.log("Hello there!");
