@@ -117,6 +117,35 @@ const pauseSong = () => {
     userData.songCurrentTime = audio.currentTime;
 };
 
+const playNextSong = () => {
+    if (userData?.currentSong === null) {
+        playSong(userData?.songs[0].id);
+    } else {
+        const currentSongIndex = getCurrentSongIndex();
+        const nextSong = userData?.songs[currentSongIndex + 1];
+        playSong(nextSong.id);
+    }
+};
+
+const playPreviousSong = () => {
+    if (userData?.currentSong === null) {
+        return;
+    } else {
+        const currentSongIndex = getCurrentSongIndex();
+        const previousSong = userData?.songs[currentSongIndex - 1];
+        playSong(previousSong.id);
+    }
+};
+
+const highlightCurrentSong = () => {
+    const playlistSongElements = document.querySelectorAll(".playlist-song");
+    playlistSongElements.forEach(song => {
+        songEl);
+    });
+    const currentSong = document.getElementById(`song-${userData?.currentSong.id}`);
+    currentSong.classList.add("current-song");
+};
+
 const renderSongs = array => {
 // The map() method takes a function as an argument. This is called a callback function, which is a function that is passed to another function as an argument. The map() method then returns a new array with the results.
     const songsHTML = array.map((song) => {
@@ -146,6 +175,10 @@ playButton.addEventListener("click", () => {
 });
 
 pauseButton.addEventListener("click", pauseSong);
+
+nextButton.addEventListener("click", playNextSong);
+
+previousButton.addEventListener("click", playPreviousSong);
 
 renderSongs(sortSongs());
 
