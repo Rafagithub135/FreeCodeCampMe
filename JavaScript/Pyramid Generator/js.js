@@ -15,6 +15,11 @@ rows[rows.length - 1] = 10;
 // Use .push() to add an element to the end of an array
 rows.push("freeCodeCamp");
 // Use .pop() to remove the last element of an array
+// let cities = ["London", "New York", "Mumbai"];
+// console.log(cities);
+// cities.pop();
+// cities.push("Mexico City");
+// console.log(cities);
 let popped = rows.pop();
 console.log(popped);
 // When you log a pushed element, it will log the length of the array
@@ -37,6 +42,11 @@ function padRow(rowNumber, rowCount) {
     return " ".repeat(rowCount - rowNumber) + character.repeat(2 * rowNumber - 1) + " ".repeat(rowCount - rowNumber);
 }
 padRow();
+// function addTwoNumbers(a, b) {
+//     return a + b;
+// }
+// let sum = addTwoNumbers(5, 10);
+// console.log(sum);
 const call = padRow();
 console.log(call);
 while (rows.length < counts) {
