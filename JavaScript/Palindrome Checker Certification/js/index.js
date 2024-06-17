@@ -20,11 +20,13 @@ function palindrome(str) {
     const regex = /[^a-zA-Z0-9]/g;
     str = str.toLowerCase().replace(regex, '');
     const reversed = str.split('').reverse().join('');
-    return str === reversed ? `${str} is a palindrome` : `${str} is not a palindrome`;
+    if (str === reversed) {
+        alert(`${str} is a palindrome`);
+    } else {
+        alert(`${str} is not a palindrome`);
+    }
 }
 
 const button = document.getElementById('check-btn');
 
-button.addEventListener('click', () => {
-    palindrome();
-});
+button.addEventListener("click", palindrome);
